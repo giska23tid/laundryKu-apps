@@ -10,7 +10,7 @@ import './assets/tailwind.css';
 import AdminLayout from "./layouts/AdminLayout";
 import MainLayout from "./layouts/MainLayout";
 
-import AdminLogin from "./pages/admin/Login";
+import AdminLogin from "./pages/admin/AdminLogin";
 import Dashboard from "./pages/admin/Dashboard";
 import DataPesanan from "./pages/admin/DataPesanan";
 
