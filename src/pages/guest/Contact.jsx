@@ -224,10 +224,10 @@ const Contact = () => {
                             Kontak Kami
                         </span>
                         <h2 className="display-5 fw-bold mb-4 text-primary">
-                            Hubungi Laundry Kilat
+                            Hubungi LaundryKu
                         </h2>
                         <p className="lead text-muted mb-4 col-lg-8 mx-auto">
-                            Punya pertanyaan atau butuh bantuan? Isi form kontak di bawah, dan tim Laundry Kilat
+                            Punya pertanyaan atau butuh bantuan? Isi form kontak di bawah, dan tim LaundryKu
                             siap membantu kamu dengan cepat dan ramah.
                         </p>
                     </div>
@@ -543,7 +543,7 @@ const Contact = () => {
                                                 />
                                                 <label className="form-check-label" htmlFor="newsletter">
                                                     <i className="bx bx-envelope me-2"></i>
-                                                    Ya, saya ingin menerima newsletter dan promo terbaru dari Laundry Kilat
+                                                    Ya, saya ingin menerima newsletter dan promo terbaru dari LaundryKu
                                                 </label>
                                             </div>
                                         </div>

@@ -8,7 +8,7 @@ const Location = () => {
   const locations = [
     {
       id: 1,
-      name: "Laundry Kilat Medan Center",
+      name: "LaundryKu Medan Center",
       address: "Jl. Sisingamangaraja No. 123, Medan",
       area: "Medan Center",
       phone: "(061) 8888-9999",

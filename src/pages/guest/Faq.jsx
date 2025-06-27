@@ -14,7 +14,7 @@ const Faq = () => {
             category: 'layanan',
             icon: 'bx-brush',
             iconColor: 'text-primary',
-            question: 'Berapa lama proses pencucian di Laundry Kilat?',
+            question: 'Berapa lama proses pencucian di LaundryKu?',
             answer: 'Kami menawarkan berbagai pilihan waktu sesuai kebutuhan Anda: Express 3 jam untuk kebutuhan mendesak, Reguler 1 hari untuk layanan standar, dan Premium 2-3 hari untuk perawatan khusus seperti dry clean. Semua dengan jaminan kualitas terbaik.',
             tags: ['waktu', 'express', 'reguler', 'premium'],
             helpful: 89,
@@ -25,7 +25,7 @@ const Faq = () => {
             category: 'harga',
             icon: 'bx-money',
             iconColor: 'text-success',
-            question: 'Bagaimana sistem pembayaran dan harga di Laundry Kilat?',
+            question: 'Bagaimana sistem pembayaran dan harga di LaundryKu?',
             answer: 'Kami menerima pembayaran tunai, transfer bank, e-wallet (GoPay, OVO, DANA), dan kartu kredit. Harga dihitung per kilogram dengan tarif mulai dari Rp 5.000/kg untuk cuci reguler. Tersedia juga paket hemat untuk pelanggan setia dengan diskon hingga 20%.',
             tags: ['harga', 'pembayaran', 'diskon', 'paket'],
             helpful: 156,
@@ -69,7 +69,7 @@ const Faq = () => {
             category: 'layanan',
             icon: 'bx-time-five',
             iconColor: 'text-purple',
-            question: 'Jam operasional dan cara menghubungi Laundry Kilat?',
+            question: 'Jam operasional dan cara menghubungi LaundryKu?',
             answer: 'Outlet kami buka setiap hari: Senin-Jumat (06:00-22:00), Sabtu-Minggu (07:00-21:00). Customer service 24/7 melalui WhatsApp di 0812-3456-7890. Anda juga bisa menghubungi kami melalui aplikasi mobile atau website untuk konsultasi dan booking layanan.',
             tags: ['jam buka', 'whatsapp', 'customer service', 'aplikasi'],
             helpful: 267,
@@ -92,7 +92,7 @@ const Faq = () => {
             icon: 'bx-gift',
             iconColor: 'text-warning',
             question: 'Apakah ada program loyalitas atau promo khusus?',
-            answer: 'Kami memiliki program Laundry Kilat VIP dengan berbagai keuntungan: Diskon 15% untuk member, Poin reward setiap transaksi, Gratis cuci setiap 10x kunjungan, Priority booking untuk layanan antar jemput, dan Promo spesial di bulan ulang tahun member.',
+            answer: 'Kami memiliki program LaundryKu VIP dengan berbagai keuntungan: Diskon 15% untuk member, Poin reward setiap transaksi, Gratis cuci setiap 10x kunjungan, Priority booking untuk layanan antar jemput, dan Promo spesial di bulan ulang tahun member.',
             tags: ['member vip', 'diskon', 'poin reward', 'promo'],
             helpful: 198,
             views: 356
@@ -173,7 +173,7 @@ const Faq = () => {
                             Pertanyaan yang Sering Diajukan (FAQ)
                         </h2>
                         <p className="lead text-muted mb-4 col-lg-8 mx-auto">
-                            Temukan jawaban atas pertanyaan umum seputar layanan Laundry Kilat.
+                            Temukan jawaban atas pertanyaan umum seputar layanan LaundryKu.
                             Kami siap membantu memberikan informasi yang kamu butuhkan dengan jelas dan cepat.
                         </p>
                     </div>

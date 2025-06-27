@@ -3,7 +3,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm py-3 pt-16">
       <div className="container">
         <a className="navbar-brand fw-bold d-flex align-items-center" href="#">
-          <i className="bx bx-droplet me-2"></i> Laundry Kilat
+          <i className="bx bx-droplet me-2"></i> LaundryKu
         </a>
 
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

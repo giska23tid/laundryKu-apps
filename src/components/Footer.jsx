@@ -77,7 +77,7 @@ const Footer = () => {
             <div className="col-lg-4 col-md-6">
               <div className="d-flex align-items-center mb-4">
                 <i className="bx bx-crown fs-1 me-1"></i>
-                <h4 className="mb-0 fw-bold text-white">Laundry Kilat</h4>
+                <h4 className="mb-0 fw-bold text-white">LaundryKu</h4>
               </div>
               <p className="mb-4 text-light" style={{ lineHeight: "1.6" }}>
                 Tingkatkan kenyamanan hidup Anda dengan layanan Laundry Kilat kami.
@@ -173,7 +173,7 @@ const Footer = () => {
             <div className="row align-items-center">
               <div className="col-md-6 text-md-start text-center">
                 <p className="mb-0 small">
-                  Laundry Kilat © {new Date().getFullYear()}. All rights reserved.<br />
+                  LaundryKu © {new Date().getFullYear()}. All rights reserved.<br />
                 </p>
               </div>
               <div className="col-md-6 text-center text-md-end">
