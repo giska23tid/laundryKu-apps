@@ -174,7 +174,6 @@ const Footer = () => {
               <div className="col-md-6 text-md-start text-center">
                 <p className="mb-0 small">
                   Laundry Kilat © {new Date().getFullYear()}. All rights reserved.<br />
-                  Dibangun dengan ❤️ oleh Hizkia Siahaan.
                 </p>
               </div>
               <div className="col-md-6 text-center text-md-end">
