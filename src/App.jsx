@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "./assets/tailwind.css";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "aos/dist/aos.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { Routes } from "react-router-dom";
 import adminRoutes from "./routes/AdminRoutes";
 import guestRoutes from "./routes/GuestRoutes";
