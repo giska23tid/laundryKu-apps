@@ -8,6 +8,7 @@ import DataLayanan from "../pages/admin/DataLayanan";
 import DataUlasan from "../pages/admin/DataUlasan";
 import RiwayatTransaksi from "../pages/admin/RiwayatTransaksi"; 
 import Logout from "../pages/admin/Logout";
+import EditPesanan from "../pages/admin/EditPesanan";
 
 const adminRoutes = [
   <Route path="/admin/login" element={<AdminLogin />} key="admin-login" />,
@@ -18,6 +19,7 @@ const adminRoutes = [
     <Route path="Ulasan" element={<DataUlasan />} />
     <Route path="RiwayatTransaksi" element={<RiwayatTransaksi />} />
     <Route path="logout" element={<Logout />} /> {/* ✅ Sudah benar */}
+    <Route path="Pesanan/edit/:id" element={<EditPesanan />} />
     {/* Tambah lainnya */}
   </Route>,
 ];
