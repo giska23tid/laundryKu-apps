@@ -5,11 +5,14 @@ import "./assets/tailwind.css";
 import React from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "aos/dist/aos.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import { Routes } from "react-router-dom";
+
+import { Routes, Route } from "react-router-dom";
 import adminRoutes from "./routes/AdminRoutes";
 import guestRoutes from "./routes/GuestRoutes";
+
+// ✅ Import komponen logout langsung
+import Logout from "./pages/admin/Logout"; // Pastikan path benar
 
 function App() {
   useEffect(() => {
@@ -18,6 +21,9 @@ function App() {
 
   return (
     <Routes>
+      {/* ✅ Tambahkan route global logout */}
+      <Route path="/logout" element={<Logout />} />
+
       {adminRoutes}
       {guestRoutes}
     </Routes>
