@@ -127,7 +127,7 @@ const RiwayatTransaksi = () => {
       {/* Modal Struk */}
       {showStruk && selectedTransaksi && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg p-6 w-full max-w-md relative">
+          <div className="bg-white rounded-lg w-full max-w-md max-h-[90vh] overflow-y-auto p-6 scrollbar-thin">
             {/* Tombol Close ❌ */}
             <button
               onClick={() => setShowStruk(false)}
