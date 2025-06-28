@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../../libs/suppabase';
 import { X, CheckCircle } from 'lucide-react';
+import React from "react";
 
 const Service = () => {
   const [services, setServices] = useState([]);

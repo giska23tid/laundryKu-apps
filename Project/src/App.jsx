@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./assets/tailwind.css";
+import React from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "aos/dist/aos.css";

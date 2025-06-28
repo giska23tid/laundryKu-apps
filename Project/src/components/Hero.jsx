@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import React from "react";
+
 // import { initTooltip } from '../functions/Tooltip';
 const Hero = () => {
     const [currentSlide, setCurrentSlide] = useState(0);

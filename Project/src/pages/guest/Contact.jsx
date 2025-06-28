@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../../libs/suppabase';
+import React from "react";
 
 const Contact = () => {
     const [formData, setFormData] = useState({
