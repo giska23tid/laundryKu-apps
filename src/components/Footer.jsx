@@ -73,7 +73,7 @@ const Footer = () => {
       >
         <div className="container py-5">
           <div className="row g-4">
-            <div className="col-lg-4 col-md-6">
+            <div className="col-lg-6 col-md-12 mb-4">
               <div className="d-flex align-items-center mb-4">
                 <i className="bx bx-crown fs-1 me-1"></i>
                 <h4 className="mb-0 fw-bold text-white">LaundryKu</h4>
@@ -103,7 +103,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="col-lg-2 col-md-6">
+            <div className="col-lg-2 col-md-4 mb-4 text-md-start text-center">
               <h5
                 className="mb-4 fw-bold"
                 style={{ color: "#ffffff", borderBottom: "2px solid #00a8ff", paddingBottom: "8px" }}
@@ -113,7 +113,7 @@ const Footer = () => {
               <ul className="list-unstyled">{renderLinks(quickLinks)}</ul>
             </div>
 
-            <div className="col-lg-2 col-md-6">
+            <div className="col-lg-2 col-md-4 mb-4 text-md-start text-center">
               <h5
                 className="mb-4 fw-bold text-white"
                 style={{ borderBottom: "2px solid #00a8ff", paddingBottom: "8px" }}
@@ -123,7 +123,7 @@ const Footer = () => {
               <ul className="list-unstyled">{renderLinks(features)}</ul>
             </div>
 
-            <div className="col-lg-2 col-md-6">
+            <div className="col-lg-2 col-md-4 mb-4 text-md-start text-center">
               <h5
                 className="mb-4 fw-bold text-white"
                 style={{ borderBottom: "2px solid #00a8ff", paddingBottom: "8px" }}
@@ -131,38 +131,6 @@ const Footer = () => {
                 <i className="bx bx-support me-2" style={{ color: "#00a8ff" }}></i>Support
               </h5>
               <ul className="list-unstyled">{renderLinks(supportLinks, false)}</ul>
-            </div>
-
-            <div className="col-lg-2 col-md-12">
-              <h5
-                className="mb-4 fw-bold text-white"
-                style={{ borderBottom: "2px solid #00a8ff", paddingBottom: "8px" }}
-              >
-                <i className="bx bx-envelope me-2" style={{ color: "#00a8ff" }}></i>Stay Updated
-              </h5>
-              <p className="text-light mb-2">Dapatkan info promo dan layanan terbaru.</p>
-              <form className="mb-3 needs-validation">
-                <input
-                  type="email"
-                  className="form-control form-control-sm mb-2"
-                  placeholder="Email Anda"
-                  required
-                  style={{
-                    backgroundColor: "#1f2a47",
-                    border: "1px solid #00a8ff",
-                    color: "#fff",
-                  }}
-                />
-                <div className="invalid-feedback mb-2">Mohon masukkan email yang valid</div>
-                <button
-                  type="submit"
-                  className="btn btn-primary btn-sm shadow w-100"
-                  data-bs-toggle="tooltip"
-                  title="Langganan"
-                >
-                  <i className="bx bx-send me-1"></i>Langganan
-                </button>
-              </form>
             </div>
           </div>
         </div>

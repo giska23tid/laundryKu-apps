@@ -23,8 +23,6 @@ const Contact = () => {
     const contactInfo = [
         {
             id: 1,
-            icon: 'bx-map',
-            iconColor: 'text-primary',
             title: 'Alamat Outlet',
             info: 'Jl. Raya Laundry No. 123, Kota Pekanbaru, Riau 20112',
             subInfo: 'Buka setiap hari: 06:00 - 22:00',
@@ -33,8 +31,6 @@ const Contact = () => {
         },
         {
             id: 2,
-            icon: 'bx-phone',
-            iconColor: 'text-success',
             title: 'Telepon & WhatsApp',
             info: '+62 853-7165-0193',
             subInfo: 'Customer Service 24/7',
@@ -43,8 +39,6 @@ const Contact = () => {
         },
         {
             id: 3,
-            icon: 'bx-envelope',
-            iconColor: 'text-info',
             title: 'Email',
             info: 'info@laundryKu.com',
             subInfo: 'Respon dalam 24 jam',
@@ -53,13 +47,9 @@ const Contact = () => {
         },
         {
             id: 4,
-            icon: 'bx-time-five',
-            iconColor: 'text-warning',
             title: 'Jam Operasional',
             info: 'Senin - Jumat: 06:00 - 22:00',
             subInfo: 'Sabtu - Minggu: 07:00 - 21:00',
-            action: 'Booking Sekarang',
-            actionIcon: 'bx-calendar-check'
         }
     ];
 
@@ -72,7 +62,6 @@ const Contact = () => {
         { value: 'cuci-sepatu', label: 'Cuci Sepatu' },
         { value: 'cuci-karpet', label: 'Cuci Karpet' },
         { value: 'setrika-premium', label: 'Setrika Premium' },
-        { value: 'antar-jemput', label: 'Layanan Antar Jemput' },
         { value: 'konsultasi', label: 'Konsultasi Perawatan' },
         { value: 'lainnya', label: 'Lainnya' }
     ];
@@ -286,18 +275,36 @@ const Contact = () => {
                                     >
                                         <div className="card-body p-4">
                                             <div className="d-flex align-items-start gap-3">
-                                                <div className={`rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 ${info.iconColor} bg-light shadow`}
-                                                    style={{ width: '50px', height: '50px' }}>
-                                                    <i className={`bx ${info.icon} fs-4`}></i>
-                                                </div>
                                                 <div className="flex-grow-1">
                                                     <h5 className="fw-bold mb-2">{info.title}</h5>
                                                     <p className="mb-1 text-dark">{info.info}</p>
                                                     <small className="text-muted d-block mb-3">{info.subInfo}</small>
-                                                    <button className="btn btn-sm btn-outline-primary shadow">
-                                                        <i className={`bx ${info.actionIcon} me-1`}></i>
-                                                        {info.action}
-                                                    </button>
+                                                    {info.id === 1 ? (
+                                                        <a
+                                                            href="https://www.google.com/maps/search/?api=1&query=Pekanbaru+Timur"
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="btn btn-sm btn-outline-primary shadow"
+                                                        >
+                                                            <i className={`bx ${info.actionIcon} me-1`}></i>
+                                                            {info.action}
+                                                        </a>
+                                                    ) : info.id === 2 ? (
+                                                        <a
+                                                            href="https://wa.me/6285371650193"
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="btn btn-sm btn-outline-primary shadow"
+                                                        >
+                                                            <i className={`bx ${info.actionIcon} me-1`}></i>
+                                                            {info.action}
+                                                        </a>
+                                                    ) : info.id === 3 || info.id === 4 ? null : (
+                                                        <button className="btn btn-sm btn-outline-primary shadow">
+                                                            <i className={`bx ${info.actionIcon} me-1`}></i>
+                                                            {info.action}
+                                                        </button>
+                                                    )}
                                                 </div>
                                             </div>
                                         </div>

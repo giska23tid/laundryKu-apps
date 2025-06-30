@@ -55,18 +55,6 @@ const Location = () => {
       className: 'btn-primary',
       tooltip: 'Telepon kami sekarang',
     },
-    {
-      label: 'Petunjuk Arah',
-      icon: 'bx-directions',
-      className: 'btn-outline-primary',
-      tooltip: 'Lihat lokasi di Google Maps',
-    },
-    {
-      label: 'Order Pickup',
-      icon: 'bx-car',
-      className: 'btn-outline-success',
-      tooltip: 'Jemput laundry ke rumahmu',
-    },
   ];
 
 

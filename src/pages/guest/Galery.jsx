@@ -158,12 +158,16 @@ const Gallery = () => {
 
                                 {/* CTA Button */}
                                 <div className="d-flex gap-3">
-                                    <button className="btn btn-primary btn-lg shadow px-4" data-bs-toggle="tooltip" title='Hubungi Kami'>
+                                    <a
+                                        href="https://wa.me/6285371650193"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn btn-primary btn-lg shadow px-4"
+                                        data-bs-toggle="tooltip"
+                                        title='Hubungi Kami'
+                                    >
                                         Hubungi Kami
-                                    </button>
-                                    <button className="btn btn-outline-primary shadow btn-lg px-4" data-bs-toggle="tooltip" title='Info Lengkap'>
-                                        Info Lengkap
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
