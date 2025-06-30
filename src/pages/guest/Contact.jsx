@@ -26,7 +26,7 @@ const Contact = () => {
             icon: 'bx-map',
             iconColor: 'text-primary',
             title: 'Alamat Outlet',
-            info: 'Jl. Raya Laundry No. 123, Kota Medan, Sumatera Utara 20112',
+            info: 'Jl. Raya Laundry No. 123, Kota Pekanbaru, Riau 20112',
             subInfo: 'Buka setiap hari: 06:00 - 22:00',
             action: 'Lihat di Maps',
             actionIcon: 'bx-map-pin'
@@ -36,7 +36,7 @@ const Contact = () => {
             icon: 'bx-phone',
             iconColor: 'text-success',
             title: 'Telepon & WhatsApp',
-            info: '+62 812-3456-7890',
+            info: '+62 853-7165-0193',
             subInfo: 'Customer Service 24/7',
             action: 'Hubungi Sekarang',
             actionIcon: 'bx-phone-call'
@@ -46,7 +46,7 @@ const Contact = () => {
             icon: 'bx-envelope',
             iconColor: 'text-info',
             title: 'Email',
-            info: 'info@laundrykilat.com',
+            info: 'info@laundryKu.com',
             subInfo: 'Respon dalam 24 jam',
             action: 'Kirim Email',
             actionIcon: 'bx-send'
@@ -226,367 +226,369 @@ const Contact = () => {
     };
 
     return (
-        <section className="py-5 bg-light overflow-hidden" id="contact">
-            <div className="container">
-                {/* Header */}
-                <div className="row mb-5">
-                    <div className="col-12 text-center" data-aos="fade-up" data-aos-duration="1000">
-                        <span className="badge bg-primary mb-3 shadow rounded-pill px-4 py-2 fs-6">
-                            <i className="bx bx-message-dots me-2"></i>
-                            Kontak Kami
-                        </span>
-                        <h2 className="display-5 fw-bold mb-4 text-primary">
-                            Hubungi LaundryKu
-                        </h2>
-                        <p className="lead text-muted mb-4 col-lg-8 mx-auto">
-                            Punya pertanyaan atau butuh bantuan? Isi form kontak di bawah, dan tim LaundryKu
-                            siap membantu kamu dengan cepat dan ramah.
-                        </p>
+        <div className="pt-20">
+            <section className="py-5 bg-light overflow-hidden" id="contact">
+                <div className="container">
+                    {/* Header */}
+                    <div className="row mb-5">
+                        <div className="col-12 text-center" data-aos="fade-up" data-aos-duration="1000">
+                            <span className="badge bg-primary mb-3 shadow rounded-pill px-4 py-2 fs-6">
+                                <i className="bx bx-message-dots me-2"></i>
+                                Kontak Kami
+                            </span>
+                            <h2 className="display-5 fw-bold mb-4 text-primary">
+                                Hubungi LaundryKu
+                            </h2>
+                            <p className="lead text-muted mb-4 col-lg-8 mx-auto">
+                                Punya pertanyaan atau butuh bantuan? Isi form kontak di bawah, dan tim LaundryKu
+                                siap membantu kamu dengan cepat dan ramah.
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                {/* Quick Stats */}
-                <div className="row g-3 mb-5" data-aos="fade-up" data-aos-delay="200">
-                    {quickStats.map((stat, index) => (
-                        <div key={index} className="col-6 col-lg-3">
-                            <div className="card border-0 shadow text-center h-100">
-                                <div className="card-body p-3">
-                                    <i className={`bx ${stat.icon} fs-2 ${stat.color} mb-2`}></i>
-                                    <h4 className="fw-bold mb-1">{stat.value}</h4>
-                                    <small className="text-muted">{stat.label}</small>
+                    {/* Quick Stats */}
+                    <div className="row g-3 mb-5" data-aos="fade-up" data-aos-delay="200">
+                        {quickStats.map((stat, index) => (
+                            <div key={index} className="col-6 col-lg-3">
+                                <div className="card border-0 shadow text-center h-100">
+                                    <div className="card-body p-3">
+                                        <i className={`bx ${stat.icon} fs-2 ${stat.color} mb-2`}></i>
+                                        <h4 className="fw-bold mb-1">{stat.value}</h4>
+                                        <small className="text-muted">{stat.label}</small>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
-
-                <div className="row g-4">
-                    {/* Contact Information */}
-                    <div className="col-lg-4" data-aos="fade-right" data-aos-delay="300">
-                        <div className="h-100">
-                            <h3 className="fw-bold mb-4 text-primary">
-                                <i className="bx bx-info-circle me-2"></i>
-                                Informasi Kontak
-                            </h3>
-
-                            {contactInfo.map((info, index) => (
-                                <div
-                                    key={info.id}
-                                    className="card border-0 shadow mb-3"
-                                    style={{
-                                        transition: 'all 0.3s ease',
-                                        transform: hoveredCard === info.id ? 'translateY(-3px)' : 'translateY(0)',
-                                        boxShadow: hoveredCard === info.id ? '0 10px 30px rgba(0,0,0,0.15)' : ''
-                                    }}
-                                    onMouseEnter={() => setHoveredCard(info.id)}
-                                    onMouseLeave={() => setHoveredCard(null)}
-                                    data-aos="zoom-in"
-                                    data-aos-delay={400 + (index * 100)}
-                                >
-                                    <div className="card-body p-4">
-                                        <div className="d-flex align-items-start gap-3">
-                                            <div className={`rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 ${info.iconColor} bg-light shadow`}
-                                                style={{ width: '50px', height: '50px' }}>
-                                                <i className={`bx ${info.icon} fs-4`}></i>
-                                            </div>
-                                            <div className="flex-grow-1">
-                                                <h5 className="fw-bold mb-2">{info.title}</h5>
-                                                <p className="mb-1 text-dark">{info.info}</p>
-                                                <small className="text-muted d-block mb-3">{info.subInfo}</small>
-                                                <button className="btn btn-sm btn-outline-primary shadow">
-                                                    <i className={`bx ${info.actionIcon} me-1`}></i>
-                                                    {info.action}
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                        ))}
                     </div>
 
-                    {/* Contact Form */}
-                    <div className="col-lg-8" data-aos="fade-left" data-aos-delay="400">
-                        <div className="card border-0 shadow">
-                            <div className="card-body p-5">
-                                <div className="d-flex align-items-center mb-4">
-                                    <i className="bx bx-edit fs-2 text-primary me-3"></i>
-                                    <div>
-                                        <h3 className="fw-bold mb-1">Kirim Pesan</h3>
-                                        <small className="text-muted">Isi form di bawah untuk menghubungi kami</small>
-                                    </div>
-                                </div>
+                    <div className="row g-4">
+                        {/* Contact Information */}
+                        <div className="col-lg-4" data-aos="fade-right" data-aos-delay="300">
+                            <div className="h-100">
+                                <h3 className="fw-bold mb-4 text-primary">
+                                    <i className="bx bx-info-circle me-2"></i>
+                                    Informasi Kontak
+                                </h3>
 
-                                {submitStatus === 'success' && (
-                                    <div className="alert alert-success d-flex align-items-center shadow" role="alert">
-                                        <i className="bx bx-check-circle fs-4 me-2"></i>
+                                {contactInfo.map((info, index) => (
+                                    <div
+                                        key={info.id}
+                                        className="card border-0 shadow mb-3"
+                                        style={{
+                                            transition: 'all 0.3s ease',
+                                            transform: hoveredCard === info.id ? 'translateY(-3px)' : 'translateY(0)',
+                                            boxShadow: hoveredCard === info.id ? '0 10px 30px rgba(0,0,0,0.15)' : ''
+                                        }}
+                                        onMouseEnter={() => setHoveredCard(info.id)}
+                                        onMouseLeave={() => setHoveredCard(null)}
+                                        data-aos="zoom-in"
+                                        data-aos-delay={400 + (index * 100)}
+                                    >
+                                        <div className="card-body p-4">
+                                            <div className="d-flex align-items-start gap-3">
+                                                <div className={`rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 ${info.iconColor} bg-light shadow`}
+                                                    style={{ width: '50px', height: '50px' }}>
+                                                    <i className={`bx ${info.icon} fs-4`}></i>
+                                                </div>
+                                                <div className="flex-grow-1">
+                                                    <h5 className="fw-bold mb-2">{info.title}</h5>
+                                                    <p className="mb-1 text-dark">{info.info}</p>
+                                                    <small className="text-muted d-block mb-3">{info.subInfo}</small>
+                                                    <button className="btn btn-sm btn-outline-primary shadow">
+                                                        <i className={`bx ${info.actionIcon} me-1`}></i>
+                                                        {info.action}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Contact Form */}
+                        <div className="col-lg-8" data-aos="fade-left" data-aos-delay="400">
+                            <div className="card border-0 shadow">
+                                <div className="card-body p-5">
+                                    <div className="d-flex align-items-center mb-4">
+                                        <i className="bx bx-edit fs-2 text-primary me-3"></i>
                                         <div>
-                                            <strong>Pesan berhasil dikirim!</strong> Tim kami akan menghubungi Anda dalam 24 jam.
+                                            <h3 className="fw-bold mb-1">Kirim Pesan</h3>
+                                            <small className="text-muted">Isi form di bawah untuk menghubungi kami</small>
                                         </div>
                                     </div>
-                                )}
 
-                                {submitStatus === 'error' && (
-                                    <div className="alert alert-danger d-flex align-items-center shadow" role="alert">
-                                        <i className="bx bx-error-circle fs-4 me-2"></i>
-                                        <div>
-                                            <strong>Gagal mengirim pesan!</strong> Silakan coba lagi atau hubungi kami via WhatsApp.
-                                        </div>
-                                    </div>
-                                )}
-
-                                <form onSubmit={handleSubmit} noValidate>
-                                    <div className="row g-3">
-                                        {/* Name Field */}
-                                        <div className="col-md-6">
-                                            <div className="form-floating">
-                                                <input
-                                                    type="text"
-                                                    name="name"
-                                                    value={formData.name}
-                                                    onChange={handleInputChange}
-                                                    className={`form-control shadow ${formErrors.name ? 'is-invalid' : formData.name ? 'is-valid' : ''}`}
-                                                    id="floatingName"
-                                                    placeholder="Nama Lengkap"
-                                                />
-                                                <label htmlFor="floatingName">
-                                                    <i className="bx bx-user me-2"></i>Nama Lengkap *
-                                                </label>
-                                                {formErrors.name && (
-                                                    <div className="invalid-feedback">
-                                                        <i className="bx bx-error-circle me-1"></i>
-                                                        {formErrors.name}
-                                                    </div>
-                                                )}
+                                    {submitStatus === 'success' && (
+                                        <div className="alert alert-success d-flex align-items-center shadow" role="alert">
+                                            <i className="bx bx-check-circle fs-4 me-2"></i>
+                                            <div>
+                                                <strong>Pesan berhasil dikirim!</strong> Tim kami akan menghubungi Anda dalam 24 jam.
                                             </div>
                                         </div>
+                                    )}
 
-                                        {/* Email Field */}
-                                        <div className="col-md-6">
-                                            <div className="form-floating">
-                                                <input
-                                                    type="email"
-                                                    name="email"
-                                                    value={formData.email}
-                                                    onChange={handleInputChange}
-                                                    className={`form-control shadow ${formErrors.email ? 'is-invalid' : formData.email ? 'is-valid' : ''}`}
-                                                    id="floatingEmail"
-                                                    placeholder="name@example.com"
-                                                />
-                                                <label htmlFor="floatingEmail">
-                                                    <i className="bx bx-envelope me-2"></i>Email Address *
-                                                </label>
-                                                {formErrors.email && (
-                                                    <div className="invalid-feedback">
-                                                        <i className="bx bx-error-circle me-1"></i>
-                                                        {formErrors.email}
-                                                    </div>
-                                                )}
+                                    {submitStatus === 'error' && (
+                                        <div className="alert alert-danger d-flex align-items-center shadow" role="alert">
+                                            <i className="bx bx-error-circle fs-4 me-2"></i>
+                                            <div>
+                                                <strong>Gagal mengirim pesan!</strong> Silakan coba lagi atau hubungi kami via WhatsApp.
                                             </div>
                                         </div>
+                                    )}
 
-                                        {/* Phone Field */}
-                                        <div className="col-md-6">
-                                            <div className="form-floating">
-                                                <input
-                                                    type="tel"
-                                                    name="phone"
-                                                    value={formData.phone}
-                                                    onChange={handleInputChange}
-                                                    className={`form-control shadow ${formErrors.phone ? 'is-invalid' : formData.phone ? 'is-valid' : ''}`}
-                                                    id="floatingPhone"
-                                                    placeholder="08123456789"
-                                                />
-                                                <label htmlFor="floatingPhone">
-                                                    <i className="bx bx-phone me-2"></i>Nomor Telepon *
-                                                </label>
-                                                {formErrors.phone && (
-                                                    <div className="invalid-feedback">
-                                                        <i className="bx bx-error-circle me-1"></i>
-                                                        {formErrors.phone}
-                                                    </div>
-                                                )}
+                                    <form onSubmit={handleSubmit} noValidate>
+                                        <div className="row g-3">
+                                            {/* Name Field */}
+                                            <div className="col-md-6">
+                                                <div className="form-floating">
+                                                    <input
+                                                        type="text"
+                                                        name="name"
+                                                        value={formData.name}
+                                                        onChange={handleInputChange}
+                                                        className={`form-control shadow ${formErrors.name ? 'is-invalid' : formData.name ? 'is-valid' : ''}`}
+                                                        id="floatingName"
+                                                        placeholder="Nama Lengkap"
+                                                    />
+                                                    <label htmlFor="floatingName">
+                                                        <i className="bx bx-user me-2"></i>Nama Lengkap *
+                                                    </label>
+                                                    {formErrors.name && (
+                                                        <div className="invalid-feedback">
+                                                            <i className="bx bx-error-circle me-1"></i>
+                                                            {formErrors.name}
+                                                        </div>
+                                                    )}
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        {/* Service Field */}
-                                        <div className="col-md-6">
-                                            <div className="form-floating">
-                                                <select
-                                                    name="service"
-                                                    value={formData.service}
-                                                    onChange={handleInputChange}
-                                                    className={`form-select shadow ${formErrors.service ? 'is-invalid' : formData.service ? 'is-valid' : ''}`}
-                                                    id="floatingService"
+                                            {/* Email Field */}
+                                            <div className="col-md-6">
+                                                <div className="form-floating">
+                                                    <input
+                                                        type="email"
+                                                        name="email"
+                                                        value={formData.email}
+                                                        onChange={handleInputChange}
+                                                        className={`form-control shadow ${formErrors.email ? 'is-invalid' : formData.email ? 'is-valid' : ''}`}
+                                                        id="floatingEmail"
+                                                        placeholder="name@example.com"
+                                                    />
+                                                    <label htmlFor="floatingEmail">
+                                                        <i className="bx bx-envelope me-2"></i>Email Address *
+                                                    </label>
+                                                    {formErrors.email && (
+                                                        <div className="invalid-feedback">
+                                                            <i className="bx bx-error-circle me-1"></i>
+                                                            {formErrors.email}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+
+                                            {/* Phone Field */}
+                                            <div className="col-md-6">
+                                                <div className="form-floating">
+                                                    <input
+                                                        type="tel"
+                                                        name="phone"
+                                                        value={formData.phone}
+                                                        onChange={handleInputChange}
+                                                        className={`form-control shadow ${formErrors.phone ? 'is-invalid' : formData.phone ? 'is-valid' : ''}`}
+                                                        id="floatingPhone"
+                                                        placeholder="08123456789"
+                                                    />
+                                                    <label htmlFor="floatingPhone">
+                                                        <i className="bx bx-phone me-2"></i>Nomor Telepon *
+                                                    </label>
+                                                    {formErrors.phone && (
+                                                        <div className="invalid-feedback">
+                                                            <i className="bx bx-error-circle me-1"></i>
+                                                            {formErrors.phone}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+
+                                            {/* Service Field */}
+                                            <div className="col-md-6">
+                                                <div className="form-floating">
+                                                    <select
+                                                        name="service"
+                                                        value={formData.service}
+                                                        onChange={handleInputChange}
+                                                        className={`form-select shadow ${formErrors.service ? 'is-invalid' : formData.service ? 'is-valid' : ''}`}
+                                                        id="floatingService"
+                                                    >
+                                                        {serviceOptions.map(option => (
+                                                            <option key={option.value} value={option.value}>
+                                                                {option.label}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                    <label htmlFor="floatingService">
+                                                        <i className="bx bx-cog me-2"></i>Jenis Layanan *
+                                                    </label>
+                                                    {formErrors.service && (
+                                                        <div className="invalid-feedback">
+                                                            <i className="bx bx-error-circle me-1"></i>
+                                                            {formErrors.service}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+
+                                            {/* Subject Field */}
+                                            <div className="col-12">
+                                                <div className="form-floating">
+                                                    <input
+                                                        type="text"
+                                                        name="subject"
+                                                        value={formData.subject}
+                                                        onChange={handleInputChange}
+                                                        className={`form-control shadow ${formErrors.subject ? 'is-invalid' : formData.subject ? 'is-valid' : ''}`}
+                                                        id="floatingSubject"
+                                                        placeholder="Subject"
+                                                    />
+                                                    <label htmlFor="floatingSubject">
+                                                        <i className="bx bx-bookmark me-2"></i>Subject *
+                                                    </label>
+                                                    {formErrors.subject && (
+                                                        <div className="invalid-feedback">
+                                                            <i className="bx bx-error-circle me-1"></i>
+                                                            {formErrors.subject}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+
+                                            {/* Priority Field */}
+                                            <div className="col-12">
+                                                <label className="form-label fw-bold">
+                                                    <i className="bx bx-flag me-2 text-warning"></i>
+                                                    Prioritas Pesan
+                                                </label>
+                                                <div className="d-flex gap-3">
+                                                    <div className="form-check">
+                                                        <input
+                                                            className="form-check-input"
+                                                            type="radio"
+                                                            name="priority"
+                                                            value="low"
+                                                            checked={formData.priority === 'low'}
+                                                            onChange={handleInputChange}
+                                                            id="priorityLow"
+                                                        />
+                                                        <label className="form-check-label" htmlFor="priorityLow">
+                                                            <span className="badge bg-success shadow me-1">LOW</span> Normal
+                                                        </label>
+                                                    </div>
+                                                    <div className="form-check">
+                                                        <input
+                                                            className="form-check-input"
+                                                            type="radio"
+                                                            name="priority"
+                                                            value="normal"
+                                                            checked={formData.priority === 'normal'}
+                                                            onChange={handleInputChange}
+                                                            id="priorityNormal"
+                                                        />
+                                                        <label className="form-check-label" htmlFor="priorityNormal">
+                                                            <span className="badge bg-warning shadow me-1">NORMAL</span> Standar
+                                                        </label>
+                                                    </div>
+                                                    <div className="form-check">
+                                                        <input
+                                                            className="form-check-input"
+                                                            type="radio"
+                                                            name="priority"
+                                                            value="high"
+                                                            checked={formData.priority === 'high'}
+                                                            onChange={handleInputChange}
+                                                            id="priorityHigh"
+                                                        />
+                                                        <label className="form-check-label" htmlFor="priorityHigh">
+                                                            <span className="badge bg-danger shadow me-1">HIGH</span> Urgent
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Message Field */}
+                                            <div className="col-12">
+                                                <div className="form-floating">
+                                                    <textarea
+                                                        name="message"
+                                                        value={formData.message}
+                                                        onChange={handleInputChange}
+                                                        className={`form-control shadow ${formErrors.message ? 'is-invalid' : formData.message ? 'is-valid' : ''}`}
+                                                        id="floatingMessage"
+                                                        placeholder="Tulis pesan Anda di sini..."
+                                                        style={{ height: '150px' }}
+                                                    ></textarea>
+                                                    <label htmlFor="floatingMessage">
+                                                        <i className="bx bx-message-detail me-2"></i>Pesan *
+                                                    </label>
+                                                    {formErrors.message && (
+                                                        <div className="invalid-feedback">
+                                                            <i className="bx bx-error-circle me-1"></i>
+                                                            {formErrors.message}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+
+                                            {/* Newsletter Checkbox */}
+                                            <div className="col-12">
+                                                <div className="form-check">
+                                                    <input
+                                                        className="form-check-input"
+                                                        type="checkbox"
+                                                        name="newsletter"
+                                                        checked={formData.newsletter}
+                                                        onChange={handleInputChange}
+                                                        id="newsletter"
+                                                    />
+                                                    <label className="form-check-label" htmlFor="newsletter">
+                                                        <i className="bx bx-envelope me-2"></i>
+                                                        Ya, saya ingin menerima newsletter dan promo terbaru dari LaundryKu
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            {/* Submit Button */}
+                                            <div className="col-12">
+                                                <button
+                                                    type="submit"
+                                                    disabled={isSubmitting}
+                                                    className="btn btn-primary btn-lg w-100 shadow"
                                                 >
-                                                    {serviceOptions.map(option => (
-                                                        <option key={option.value} value={option.value}>
-                                                            {option.label}
-                                                        </option>
-                                                    ))}
-                                                </select>
-                                                <label htmlFor="floatingService">
-                                                    <i className="bx bx-cog me-2"></i>Jenis Layanan *
-                                                </label>
-                                                {formErrors.service && (
-                                                    <div className="invalid-feedback">
-                                                        <i className="bx bx-error-circle me-1"></i>
-                                                        {formErrors.service}
-                                                    </div>
-                                                )}
+                                                    {isSubmitting ? (
+                                                        <>
+                                                            <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                                            Mengirim Pesan...
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <i className="bx bx-send me-2"></i>
+                                                            Kirim Pesan
+                                                        </>
+                                                    )}
+                                                </button>
+                                                <small className="text-muted d-block text-center mt-2">
+                                                    <i className="bx bx-shield-check me-1"></i>
+                                                    Data Anda aman dan tidak akan disebarluaskan
+                                                </small>
                                             </div>
                                         </div>
-
-                                        {/* Subject Field */}
-                                        <div className="col-12">
-                                            <div className="form-floating">
-                                                <input
-                                                    type="text"
-                                                    name="subject"
-                                                    value={formData.subject}
-                                                    onChange={handleInputChange}
-                                                    className={`form-control shadow ${formErrors.subject ? 'is-invalid' : formData.subject ? 'is-valid' : ''}`}
-                                                    id="floatingSubject"
-                                                    placeholder="Subject"
-                                                />
-                                                <label htmlFor="floatingSubject">
-                                                    <i className="bx bx-bookmark me-2"></i>Subject *
-                                                </label>
-                                                {formErrors.subject && (
-                                                    <div className="invalid-feedback">
-                                                        <i className="bx bx-error-circle me-1"></i>
-                                                        {formErrors.subject}
-                                                    </div>
-                                                )}
-                                            </div>
-                                        </div>
-
-                                        {/* Priority Field */}
-                                        <div className="col-12">
-                                            <label className="form-label fw-bold">
-                                                <i className="bx bx-flag me-2 text-warning"></i>
-                                                Prioritas Pesan
-                                            </label>
-                                            <div className="d-flex gap-3">
-                                                <div className="form-check">
-                                                    <input
-                                                        className="form-check-input"
-                                                        type="radio"
-                                                        name="priority"
-                                                        value="low"
-                                                        checked={formData.priority === 'low'}
-                                                        onChange={handleInputChange}
-                                                        id="priorityLow"
-                                                    />
-                                                    <label className="form-check-label" htmlFor="priorityLow">
-                                                        <span className="badge bg-success shadow me-1">LOW</span> Normal
-                                                    </label>
-                                                </div>
-                                                <div className="form-check">
-                                                    <input
-                                                        className="form-check-input"
-                                                        type="radio"
-                                                        name="priority"
-                                                        value="normal"
-                                                        checked={formData.priority === 'normal'}
-                                                        onChange={handleInputChange}
-                                                        id="priorityNormal"
-                                                    />
-                                                    <label className="form-check-label" htmlFor="priorityNormal">
-                                                        <span className="badge bg-warning shadow me-1">NORMAL</span> Standar
-                                                    </label>
-                                                </div>
-                                                <div className="form-check">
-                                                    <input
-                                                        className="form-check-input"
-                                                        type="radio"
-                                                        name="priority"
-                                                        value="high"
-                                                        checked={formData.priority === 'high'}
-                                                        onChange={handleInputChange}
-                                                        id="priorityHigh"
-                                                    />
-                                                    <label className="form-check-label" htmlFor="priorityHigh">
-                                                        <span className="badge bg-danger shadow me-1">HIGH</span> Urgent
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {/* Message Field */}
-                                        <div className="col-12">
-                                            <div className="form-floating">
-                                                <textarea
-                                                    name="message"
-                                                    value={formData.message}
-                                                    onChange={handleInputChange}
-                                                    className={`form-control shadow ${formErrors.message ? 'is-invalid' : formData.message ? 'is-valid' : ''}`}
-                                                    id="floatingMessage"
-                                                    placeholder="Tulis pesan Anda di sini..."
-                                                    style={{ height: '150px' }}
-                                                ></textarea>
-                                                <label htmlFor="floatingMessage">
-                                                    <i className="bx bx-message-detail me-2"></i>Pesan *
-                                                </label>
-                                                {formErrors.message && (
-                                                    <div className="invalid-feedback">
-                                                        <i className="bx bx-error-circle me-1"></i>
-                                                        {formErrors.message}
-                                                    </div>
-                                                )}
-                                            </div>
-                                        </div>
-
-                                        {/* Newsletter Checkbox */}
-                                        <div className="col-12">
-                                            <div className="form-check">
-                                                <input
-                                                    className="form-check-input"
-                                                    type="checkbox"
-                                                    name="newsletter"
-                                                    checked={formData.newsletter}
-                                                    onChange={handleInputChange}
-                                                    id="newsletter"
-                                                />
-                                                <label className="form-check-label" htmlFor="newsletter">
-                                                    <i className="bx bx-envelope me-2"></i>
-                                                    Ya, saya ingin menerima newsletter dan promo terbaru dari LaundryKu
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        {/* Submit Button */}
-                                        <div className="col-12">
-                                            <button
-                                                type="submit"
-                                                disabled={isSubmitting}
-                                                className="btn btn-primary btn-lg w-100 shadow"
-                                            >
-                                                {isSubmitting ? (
-                                                    <>
-                                                        <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                                                        Mengirim Pesan...
-                                                    </>
-                                                ) : (
-                                                    <>
-                                                        <i className="bx bx-send me-2"></i>
-                                                        Kirim Pesan
-                                                    </>
-                                                )}
-                                            </button>
-                                            <small className="text-muted d-block text-center mt-2">
-                                                <i className="bx bx-shield-check me-1"></i>
-                                                Data Anda aman dan tidak akan disebarluaskan
-                                            </small>
-                                        </div>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     );
 };
 

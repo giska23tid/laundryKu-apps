@@ -162,226 +162,223 @@ const Faq = () => {
     };
 
     return (
-        <section className="py-5 bg-light overflow-hidden" id="faq">
-            <div className="container">
-                {/* Header */}
-                <div className="row mb-5">
-                    <div className="col-12 text-center" data-aos="fade-up" data-aos-duration="1000">
-                        <span className="badge bg-primary mb-3 shadow rounded-pill px-4 py-2 fs-6">
-                            <i className="bx bx-help-circle me-2"></i>
-                            Pertanyaan Umum
-                        </span>
-                        <h2 className="display-5 fw-bold mb-4 text-primary">
-                            Pertanyaan yang Sering Diajukan (FAQ)
-                        </h2>
-                        <p className="lead text-muted mb-4 col-lg-8 mx-auto">
-                            Temukan jawaban atas pertanyaan umum seputar layanan LaundryKu.
-                            Kami siap membantu memberikan informasi yang kamu butuhkan dengan jelas dan cepat.
-                        </p>
-                    </div>
-                </div>
-
-                {/* Quick Stats */}
-                <div className="row g-3 mb-5" data-aos="fade-up" data-aos-delay="200">
-                    {quickStats.map((stat, index) => (
-                        <div key={index} className="col-6 col-lg-3">
-                            <div className="card border-0 shadow text-center h-100">
-                                <div className="card-body p-3">
-                                    <i className={`bx ${stat.icon} fs-2 ${stat.color} mb-2`}></i>
-                                    <h4 className="fw-bold mb-1">{stat.value}</h4>
-                                    <small className="text-muted">{stat.label}</small>
-                                </div>
-                            </div>
+        <div className="pt-20">
+            <section className="py-5 bg-light overflow-hidden" id="faq">
+                <div className="container">
+                    {/* Header */}
+                    <div className="row mb-5">
+                        <div className="col-12 text-center" data-aos="fade-up" data-aos-duration="1000">
+                            <span className="badge bg-primary mb-3 shadow rounded-pill px-4 py-2 fs-6">
+                                <i className="bx bx-help-circle me-2"></i>
+                                Pertanyaan Umum
+                            </span>
+                            <h2 className="display-5 fw-bold mb-4 text-primary">
+                                Pertanyaan yang Sering Diajukan (FAQ)
+                            </h2>
+                            <p className="lead text-muted mb-4 col-lg-8 mx-auto">
+                                Temukan jawaban atas pertanyaan umum seputar layanan LaundryKu.
+                                Kami siap membantu memberikan informasi yang kamu butuhkan dengan jelas dan cepat.
+                            </p>
                         </div>
-                    ))}
-                </div>
+                    </div>
 
-                {/* Search Bar */}
-                <div className="row mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div className="col-12">
-                        <div className="card border-0 shadow">
-                            <div className="card-body p-4">
-                                <div className="row align-items-center">
-                                    <div className="col-lg-8">
-                                        <div className="position-relative">
-                                            <i className="bx bx-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
-                                            <input
-                                                type="text"
-                                                className="form-control ps-5 py-3 border-0 bg-light shadow w-100"
-                                                placeholder="Cari pertanyaan atau kata kunci..."
-                                                value={searchQuery}
-                                                onChange={(e) => setSearchQuery(e.target.value)}
-                                                style={{ fontSize: '16px' }}
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-4 mt-3 mt-lg-0">
-                                        <div className="d-flex justify-content-lg-end">
-                                            <span className="badge bg-primary fs-6 shadow px-3 py-2">
-                                                <i className="bx bx-search-alt me-1"></i>
-                                                {filteredFaqs.length} hasil ditemukan
-                                            </span>
-                                        </div>
+                    {/* Quick Stats */}
+                    <div className="row g-3 mb-5" data-aos="fade-up" data-aos-delay="200">
+                        {quickStats.map((stat, index) => (
+                            <div key={index} className="col-6 col-lg-3">
+                                <div className="card border-0 shadow text-center h-100">
+                                    <div className="card-body p-3">
+                                        <i className={`bx ${stat.icon} fs-2 ${stat.color} mb-2`}></i>
+                                        <h4 className="fw-bold mb-1">{stat.value}</h4>
+                                        <small className="text-muted">{stat.label}</small>
                                     </div>
                                 </div>
                             </div>
+                        ))}
+                    </div>
+
+                    {/* Search Bar */}
+                    <div className="row mb-4" data-aos="fade-up" data-aos-delay="300">
+                        <div className="col-12">
+                            <div className="card border-0 shadow">
+                                <div className="card-body p-4">
+                                    <div className="row align-items-center">
+                                        <div className="col-lg-8">
+                                            <div className="position-relative">
+                                                <i className="bx bx-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+                                                <input
+                                                    type="text"
+                                                    className="form-control ps-5 py-3 border-0 bg-light shadow w-100"
+                                                    placeholder="Cari pertanyaan atau kata kunci..."
+                                                    value={searchQuery}
+                                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                                    style={{ fontSize: '16px' }}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-4 mt-3 mt-lg-0">
+                                            <div className="d-flex justify-content-lg-end">
+                                                <span className="badge bg-primary fs-6 shadow px-3 py-2">
+                                                    <i className="bx bx-search-alt me-1"></i>
+                                                    {filteredFaqs.length} hasil ditemukan
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                {/* Category Filter */}
-                <div className="row mb-4" data-aos="fade-up" data-aos-delay="400">
-                    <div className="col-12">
-                        <div className="d-flex flex-wrap justify-content-center gap-2 mb-4">
-                            {faqCategories.map(category => (
-                                <button
-                                    key={category.id}
-                                    className={`btn shadow ${activeCategory === category.id ? 'btn-primary' : 'btn-outline-primary'} 
-                                              shadow d-flex align-items-center gap-2`}
-                                    onClick={() => setActiveCategory(category.id)}
-                                    style={{ transition: 'all 0.3s ease' }}
-                                >
-                                    <i className={`bx ${category.icon}`}></i>
-                                    {category.name}
-                                    <span className="badge bg-light text-dark ms-1">{category.count}</span>
-                                </button>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-
-                {/* FAQ Accordion */}
-                <div className="row" data-aos="fade-up" data-aos-delay="500">
-                    <div className="col-12">
-                        {filteredFaqs.length > 0 ? (
-                            <div className="accordion" id="faqAccordion">
-                                {filteredFaqs.map((faq, index) => (
-                                    <div 
-                                        key={faq.id} 
-                                        className="card border-0 shadow mb-3 faq-card"
-                                        style={{ 
-                                            transition: 'all 0.3s ease',
-                                            transform: hoveredFaq === faq.id ? 'translateY(-2px)' : 'translateY(0)',
-                                            boxShadow: hoveredFaq === faq.id ? '0 8px 25px rgba(0,0,0,0.1)' : ''
-                                        }}
-                                        onMouseEnter={() => setHoveredFaq(faq.id)}
-                                        onMouseLeave={() => setHoveredFaq(null)}
-                                        data-aos="zoom-in" 
-                                        data-aos-delay={index * 100}
+                    {/* Category Filter */}
+                    <div className="row mb-4" data-aos="fade-up" data-aos-delay="400">
+                        <div className="col-12">
+                            <div className="d-flex flex-wrap justify-content-center gap-2 mb-4">
+                                {faqCategories.map(category => (
+                                    <button
+                                        key={category.id}
+                                        className={`btn shadow ${activeCategory === category.id ? 'btn-primary' : 'btn-outline-primary'} 
+                                                  shadow d-flex align-items-center gap-2`}
+                                        onClick={() => setActiveCategory(category.id)}
+                                        style={{ transition: 'all 0.3s ease' }}
                                     >
-                                        <div className="card-header bg-white border-0 p-0">
-                                            <button
-                                                className={`btn btn-link text-decoration-none w-100 text-start p-4 d-flex align-items-center gap-3 ${
-                                                    activeAccordion === faq.id ? 'text-primary' : 'text-dark'
-                                                }`}
-                                                onClick={() => toggleAccordion(faq.id)}
-                                                style={{ transition: 'all 0.3s ease' }}
-                                            > 
-                                                <div className={`rounded-circle d-flex align-items-center shadow justify-content-center flex-shrink-0 ${faq.iconColor} bg-light`}
-                                                     style={{ width: '50px', height: '50px' }}>
-                                                    <i className={`bx ${faq.icon} fs-4`}></i>
-                                                </div>
-                                                
-                                                <div className="flex-grow-1">
-                                                    <h5 className="fw-bold mb-1">{faq.question}</h5>
-                                                    <div className="d-flex align-items-center gap-3 text-muted small">
-                                                        <span>
-                                                            <i className="bx bx-like me-1"></i>
-                                                            {faq.helpful} helpful
-                                                        </span>
-                                                        <span>
-                                                            <i className="bx bx-show me-1"></i>
-                                                            {faq.views} views
-                                                        </span>
-                                                        <span className={`badge shadow ${
-                                                            faq.category === 'layanan' ? 'bg-primary' :
-                                                            faq.category === 'harga' ? 'bg-success' :
-                                                            faq.category === 'kualitas' ? 'bg-warning' : 'bg-info'
-                                                        } text-white`}>
-                                                            {faq.category}
-                                                        </span>
-                                                    </div>
-                                                </div>
+                                        <i className={`bx ${category.icon}`}></i>
+                                        {category.name}
+                                        <span className="badge bg-light text-dark ms-1">{category.count}</span>
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
 
-                                                <div className={`transition-all duration-300 ${
-                                                    activeAccordion === faq.id ? 'rotate-180' : ''
-                                                }`} style={{ transition: 'transform 0.3s ease' }}>
-                                                    <i className="bx bx-chevron-down fs-4"></i>
-                                                </div>
-                                            </button>
-                                        </div>
-
-                                        <div className={`collapse ${activeAccordion === faq.id ? 'show' : ''}`}>
-                                            <div className="card-body pt-0 px-4 pb-4">
-                                                <div className="ps-5">
-                                                    <div className="border-start border-primary border-3 ps-4">
-                                                        <p className="text-muted mb-4" style={{ lineHeight: '1.7' }}>
-                                                            {faq.answer}
-                                                        </p>
-
-                                                        {/* Tags */}
-                                                        <div className="d-flex flex-wrap gap-2 mb-4">
-                                                            {faq.tags.map((tag, tagIndex) => (
-                                                                <span 
-                                                                    key={tagIndex}
-                                                                    className="badge bg-light text-primary border shadow"
-                                                                >
-                                                                    <i className="bx bx-tag me-1"></i>
-                                                                    {tag}
-                                                                </span>
-                                                            ))}
+                    {/* FAQ Accordion */}
+                    <div className="row" data-aos="fade-up" data-aos-delay="500">
+                        <div className="col-12">
+                            {filteredFaqs.length > 0 ? (
+                                <div className="accordion" id="faqAccordion">
+                                    {filteredFaqs.map((faq, index) => (
+                                        <div 
+                                            key={faq.id} 
+                                            className="card border-0 shadow mb-3 faq-card"
+                                            style={{ 
+                                                transition: 'all 0.3s ease',
+                                                transform: hoveredFaq === faq.id ? 'translateY(-2px)' : 'translateY(0)',
+                                                boxShadow: hoveredFaq === faq.id ? '0 8px 25px rgba(0,0,0,0.1)' : ''
+                                            }}
+                                            onMouseEnter={() => setHoveredFaq(faq.id)}
+                                            onMouseLeave={() => setHoveredFaq(null)}
+                                            data-aos="zoom-in" 
+                                            data-aos-delay={index * 100}
+                                        >
+                                            <div className="card-header bg-white border-0 p-0">
+                                                <button
+                                                    className={`btn btn-link text-decoration-none w-100 text-start p-4 d-flex align-items-center gap-3 ${
+                                                        activeAccordion === faq.id ? 'text-primary' : 'text-dark'
+                                                    }`}
+                                                    onClick={() => toggleAccordion(faq.id)}
+                                                    style={{ transition: 'all 0.3s ease' }}
+                                                > 
+                                                    <div className="flex-grow-1">
+                                                        <h5 className="fw-bold mb-1">{faq.question}</h5>
+                                                        <div className="d-flex align-items-center gap-3 text-muted small">
+                                                            <span>
+                                                                <i className="bx bx-like me-1"></i>
+                                                                {faq.helpful} helpful
+                                                            </span>
+                                                            <span>
+                                                                <i className="bx bx-show me-1"></i>
+                                                                {faq.views} views
+                                                            </span>
+                                                            <span className={`badge shadow ${
+                                                                faq.category === 'layanan' ? 'bg-primary' :
+                                                                faq.category === 'harga' ? 'bg-success' :
+                                                                faq.category === 'kualitas' ? 'bg-warning' : 'bg-info'
+                                                            } text-white`}>
+                                                                {faq.category}
+                                                            </span>
                                                         </div>
+                                                    </div>
 
-                                                        {/* Action Buttons */}
-                                                        <div className="d-flex justify-content-between align-items-center">
-                                                            <div className="d-flex gap-2">
-                                                                <button 
-                                                                    className="btn btn-sm btn-outline-success shadow"
-                                                                    onClick={() => handleHelpful(faq.id)}
-                                                                    data-bs-toggle="tooltip" 
-                                                                    title="Apakah ini membantu?"
-                                                                >
-                                                                    <i className="bx bx-like me-1"></i>
-                                                                    Helpful ({faq.helpful})
-                                                                </button>
-                                                                <button className="btn btn-sm btn-outline-primary shadow" style={{marginRight:'0.8rem'}}>
-                                                                    <i className="bx bx-share me-2"></i>
-                                                                    Share
-                                                                </button>
+                                                    <div className={`transition-all duration-300 ${
+                                                        activeAccordion === faq.id ? 'rotate-180' : ''
+                                                    }`} style={{ transition: 'transform 0.3s ease' }}>
+                                                        <i className="bx bx-chevron-down fs-4"></i>
+                                                    </div>
+                                                </button>
+                                            </div>
+
+                                            <div className={`collapse ${activeAccordion === faq.id ? 'show' : ''}`}>
+                                                <div className="card-body pt-0 px-4 pb-4">
+                                                    <div className="ps-5">
+                                                        <div className="border-start border-primary border-3 ps-4">
+                                                            <p className="text-muted mb-4" style={{ lineHeight: '1.7' }}>
+                                                                {faq.answer}
+                                                            </p>
+
+                                                            {/* Tags */}
+                                                            <div className="d-flex flex-wrap gap-2 mb-4">
+                                                                {faq.tags.map((tag, tagIndex) => (
+                                                                    <span 
+                                                                        key={tagIndex}
+                                                                        className="badge bg-light text-primary border shadow"
+                                                                    >
+                                                                        <i className="bx bx-tag me-1"></i>
+                                                                        {tag}
+                                                                    </span>
+                                                                ))}
                                                             </div>
-                                                            <small className="text-muted">
-                                                                <i className="bx bx-time me-1"></i>
-                                                                Diperbarui 2 hari lalu
-                                                            </small>
+
+                                                            {/* Action Buttons */}
+                                                            <div className="d-flex justify-content-between align-items-center">
+                                                                <div className="d-flex gap-2">
+                                                                    <button 
+                                                                        className="btn btn-sm btn-outline-success shadow"
+                                                                        onClick={() => handleHelpful(faq.id)}
+                                                                        data-bs-toggle="tooltip" 
+                                                                        title="Apakah ini membantu?"
+                                                                    >
+                                                                        <i className="bx bx-like me-1"></i>
+                                                                        Helpful ({faq.helpful})
+                                                                    </button>
+                                                                    <button className="btn btn-sm btn-outline-primary shadow" style={{marginRight:'0.8rem'}}>
+                                                                        <i className="bx bx-share me-2"></i>
+                                                                        Share
+                                                                    </button>
+                                                                </div>
+                                                                <small className="text-muted">
+                                                                    <i className="bx bx-time me-1"></i>
+                                                                    Diperbarui 2 hari lalu
+                                                                </small>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                ))}
-                            </div>
-                        ) : (
-                            <div className="text-center py-5">
-                                <i className="bx bx-search-alt-2 display-1 text-muted mb-3"></i>
-                                <h4 className="text-muted">Tidak ada FAQ yang ditemukan</h4>
-                                <p className="text-muted">Coba gunakan kata kunci yang berbeda atau pilih kategori lain.</p>
-                                <button 
-                                    className="btn btn-primary shadow"
-                                    onClick={() => {
-                                        setSearchQuery('');
-                                        setActiveCategory('all');
-                                    }}
-                                >
-                                    <i className="bx bx-refresh me-2"></i>
-                                    Reset Filter
-                                </button>
-                            </div>
-                        )}
+                                    ))}
+                                </div>
+                            ) : (
+                                <div className="text-center py-5">
+                                    <i className="bx bx-search-alt-2 display-1 text-muted mb-3"></i>
+                                    <h4 className="text-muted">Tidak ada FAQ yang ditemukan</h4>
+                                    <p className="text-muted">Coba gunakan kata kunci yang berbeda atau pilih kategori lain.</p>
+                                    <button 
+                                        className="btn btn-primary shadow"
+                                        onClick={() => {
+                                            setSearchQuery('');
+                                            setActiveCategory('all');
+                                        }}
+                                    >
+                                        <i className="bx bx-refresh me-2"></i>
+                                        Reset Filter
+                                    </button>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     );
 };
 

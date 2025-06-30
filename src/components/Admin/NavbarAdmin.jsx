@@ -1,28 +1,30 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaUserCircle, FaSignOutAlt } from 'react-icons/fa';
+import { FaUser, FaSignOutAlt } from 'react-icons/fa';
 
 const NavbarAdmin = () => {
   return (
-    <nav className="fixed top-0 left-0 w-full h-16 bg-white shadow-md border-b border-gray-200 px-6 py-4 z-50 flex items-center justify-between">      {/* Logo */}
-      <div className="text-2xl font-bold text-blue-600 tracking-wide">
-        Laundry<span className="text-gray-800">Admin</span>
+    <nav className="fixed top-0 left-0 w-full h-16 bg-gradient-to-r from-blue-500 to-blue-700 shadow-lg px-6 py-4 z-50 flex items-center justify-between">
+      {/* Logo - putih dengan efek glow */}
+      <div className="text-2xl font-bold text-white tracking-wide drop-shadow-lg">
+        LaundryKu
       </div>
 
-      {/* Navigation */}
-      <div className="hidden md:flex gap-6 text-sm font-medium text-gray-600">
+      {/* Navigation - semua text putih */}
+      <div className="hidden md:flex gap-8 text-sm font-medium">
         {[
           { to: '/admin', label: 'Dashboard' },
           { to: '/admin/pesanan', label: 'Pesanan' },
           { to: '/admin/Ulasan', label: 'Ulasan' },
           { to: '/admin/layanan', label: 'Layanan' },
-          { to: '/admin/transaksi', label: 'Transaksi' },
+          { to: '/admin/riwayat-transaksi', label: 'RiwayatTransaksi' },
         ].map(({ to, label }) => (
           <NavLink
             key={to}
             to={to}
             className={({ isActive }) =>
-              `hover:text-blue-600 transition ${isActive ? 'text-blue-700 font-semibold' : ''
+              `text-white hover:text-blue-200 transition ${
+                isActive ? 'font-bold underline underline-offset-4' : ''
               }`
             }
           >
@@ -33,13 +35,13 @@ const NavbarAdmin = () => {
 
       {/* Profile / Logout */}
       <div className="flex items-center gap-4">
-        <div className="flex items-center gap-2 text-sm text-gray-700">
-          <FaUserCircle className="text-xl text-blue-500" />
+        <div className="flex items-center gap-2 text-sm text-white">
+          <FaUser Circle className="text-xl" />
           <span>Admin</span>
         </div>
         <NavLink
           to="/logout"
-          className="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-3 py-1.5 rounded text-sm transition"
+          className="flex items-center gap-2 bg-white hover:bg-gray-100 text-blue-600 px-3 py-1.5 rounded-md text-sm transition font-medium shadow-sm"
         >
           <FaSignOutAlt className="text-sm" />
           Logout

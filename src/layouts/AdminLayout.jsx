@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
-import NavbarAdmin from "../components/Navbar";
+import NavbarAdmin from "../components/Admin/NavbarAdmin";
 import SidebarAdmin from "../components/Admin/SidebarAdmin";
 import React from "react";
 

@@ -88,197 +88,199 @@ const Location = () => {
   const currentLocation = locations[activeLocation];
 
   return (
-    <section className="py-5 bg-light overflow-hidden" id="location">
-      <div className="container">
-        {/* Header Section */}
-        <div className="row mb-5">
-          <div className="col-12 text-center" data-aos="fade-up" data-aos-duration="1000">
-            <span className="badge bg-primary mb-3 shadow rounded-pill px-4 py-2 fs-6">
-              <i className="bx bx-map me-2"></i>
-              Lokasi Kami
-            </span>
-            <h2 className="display-5 fw-bold mb-4 text-primary">
-              Temukan Cabang Laundry Kilat Terdekat
-            </h2>
-            <p className="lead text-muted mb-4 col-lg-8 mx-auto">
-              Tersebar di berbagai lokasi strategis di Medan, Laundry Kilat hadir
-              untuk memberikan layanan terbaik dengan jangkauan yang luas dan mudah dijangkau.
-            </p>
-          </div>
-        </div>
-
-        {/* Location Tabs */}
-        <div className="row mb-4" data-aos="fade-up" data-aos-delay="200">
-          <div className="col-12">
-            <div className="d-flex flex-wrap justify-content-center gap-2 mb-4">
-              {locations.map((location, index) => (
-                <button
-                  key={location.id}
-                  className={`btn ${activeLocation === index ? 'btn-primary' : 'btn-outline-primary'} 
-                                              shadow d-flex align-items-center gap-2 position-relative`}
-                  onClick={() => setActiveLocation(index)}
-                  style={{ transition: 'all 0.3s ease' }}
-                >
-                  <i className="bx bx-store"></i>
-                  {location.area}
-                  {location.isMain && (
-                    <span className="badge bg-warning text-dark ms-1">
-                      <i className="bx bx-crown"></i>
-                    </span>
-                  )}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Main Location Content */}
-        <div className="row align-items-center g-4 mb-5" data-aos="fade-up" data-aos-delay="400">
-          {/* Map Section */}
-          <div className="col-lg-6">
-            <div className="position-relative">
-              <div className="card shadow border-0 rounded-4 overflow-hidden">
-                <iframe
-                  title={`${currentLocation.name} Location`}
-                  src={currentLocation.mapUrl}
-                  width="100%"
-                  height="400"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-
-                {/* Overlay Info Card */}
-                <div className="position-absolute top-0 end-0" style={{ marginTop: '50px', marginLeft: '0.7rem' }}>
-                  <div className="card border-0 shadow" style={{ width: 'max-content' }}>
-                    <div className="card-body p-3">
-                      <div className="d-flex align-items-center mb-2">
-                        <img
-                          src={currentLocation.image}
-                          alt={currentLocation.name}
-                          className="rounded me-2"
-                          style={{ width: '40px', height: '40px', objectFit: 'cover' }}
-                        />
-                        <div>
-                          <h6 className="mb-0 fw-bold text-truncate">{currentLocation.name}</h6>
-                          <div className="d-flex align-items-center">
-                            {renderStars(currentLocation.rating)}
-                            <small className="text-muted ms-1">
-                              {currentLocation.rating} ({currentLocation.reviews})
-                            </small>
-                          </div>
-                        </div>
-                      </div>
-                      <p className="small text-muted mb-0">
-                        <i className="bx bx-map me-1"></i>
-                        {currentLocation.address}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Live Status Badge */}
-                <div className="position-absolute top-0 end-0 m-3">
-                  <span className="badge bg-success shadow d-flex align-items-center gap-1">
-                    <span className="spinner-grow spinner-grow-sm" role="status" style={{ width: '8px', height: '8px' }}></span>
-                    Buka Sekarang
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Location Details */}
-          <div className="col-lg-6">
-            <div className="ps-lg-4">
-              <div className="d-flex align-items-center mb-3">
-                <span className="badge bg-primary shadow rounded-pill px-3 py-2 fs-6 me-3">
-                  <i className="bx bx-crown me-1"></i>
-                  {currentLocation.isMain ? 'Cabang Utama' : 'Cabang'}
-                </span>
-                <div className="d-flex align-items-center">
-                  {renderStars(currentLocation.rating)}
-                  <span className="ms-2 fw-bold text-warning">{currentLocation.rating}</span>
-                  <small className="text-muted ms-1">({currentLocation.reviews} reviews)</small>
-                </div>
-              </div>
-
-              <h2 className="display-6 fw-bold mb-3 text-primary">
-                {currentLocation.name}
+    <div className="pt-20">
+      <section className="py-5 bg-light overflow-hidden" id="location">
+        <div className="container">
+          {/* Header Section */}
+          <div className="row mb-5">
+            <div className="col-12 text-center" data-aos="fade-up" data-aos-duration="1000">
+              <span className="badge bg-primary mb-3 shadow rounded-pill px-4 py-2 fs-6">
+                <i className="bx bx-map me-2"></i>
+                Lokasi Kami
+              </span>
+              <h2 className="display-5 fw-bold mb-4 text-primary">
+                Temukan Cabang Laundry Kilat Terdekat
               </h2>
+              <p className="lead text-muted mb-4 col-lg-8 mx-auto">
+                Tersebar di berbagai lokasi strategis di Medan, Laundry Kilat hadir
+                untuk memberikan layanan terbaik dengan jangkauan yang luas dan mudah dijangkau.
+              </p>
+            </div>
+          </div>
 
-              <div className="row g-3 mb-4">
-                <div className="col-12">
-                  <div className="d-flex align-items-center text-muted">
-                    <i className="bx bx-map fs-5 me-3 text-primary"></i>
-                    <div>
-                      <strong className="text-dark">Alamat:</strong><br />
-                      {currentLocation.address}
-                    </div>
-                  </div>
-                </div>
-                <div className="col-6">
-                  <div className="d-flex align-items-center text-muted">
-                    <i className="bx bx-phone fs-5 me-3 text-success"></i>
-                    <div>
-                      <strong className="text-dark">Telepon:</strong><br />
-                      <a href={`tel:${currentLocation.phone}`} className="text-decoration-none">
-                        {currentLocation.phone}
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-6">
-                  <div className="d-flex align-items-center text-muted">
-                    <i className="bx bx-time fs-5 me-3 text-info"></i>
-                    <div>
-                      <strong className="text-dark">Jam Buka:</strong><br />
-                      {currentLocation.hours}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Services Available */}
-              <div className="mb-4">
-                <h5 className="fw-bold mb-3">
-                  <i className="bx bx-check-shield text-primary me-2"></i>
-                  Layanan Tersedia
-                </h5>
-                <div className="d-flex flex-wrap gap-2">
-                  {currentLocation.features.map((feature, index) => (
-                    <span
-                      key={index}
-                      className="badge bg-light text-primary border shadow px-3 py-2"
-                    >
-                      <i className="bx bx-check-circle me-1"></i>
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="d-flex flex-wrap gap-2">
-                {actionButtons.map((btn, index) => (
-                  <button key={index}
-                  className={`btn ${btn.className} shadow d-flex align-items-center gap-2`}
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title={btn.tooltip}
+          {/* Location Tabs */}
+          <div className="row mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div className="col-12">
+              <div className="d-flex flex-wrap justify-content-center gap-2 mb-4">
+                {locations.map((location, index) => (
+                  <button
+                    key={location.id}
+                    className={`btn ${activeLocation === index ? 'btn-primary' : 'btn-outline-primary'} 
+                                              shadow d-flex align-items-center gap-2 position-relative`}
+                    onClick={() => setActiveLocation(index)}
+                    style={{ transition: 'all 0.3s ease' }}
                   >
-                    <i className={`bx ${btn.icon}`}></i>
-                    {btn.label}
+                    <i className="bx bx-store"></i>
+                    {location.area}
+                    {location.isMain && (
+                      <span className="badge bg-warning text-dark ms-1">
+                        <i className="bx bx-crown"></i>
+                      </span>
+                    )}
                   </button>
                 ))}
               </div>
             </div>
           </div>
-        </div>
 
-      </div>
-    </section>
+          {/* Main Location Content */}
+          <div className="row align-items-center g-4 mb-5" data-aos="fade-up" data-aos-delay="400">
+            {/* Map Section */}
+            <div className="col-lg-6">
+              <div className="position-relative">
+                <div className="card shadow border-0 rounded-4 overflow-hidden">
+                  <iframe
+                    title={`${currentLocation.name} Location`}
+                    src={currentLocation.mapUrl}
+                    width="100%"
+                    height="400"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+
+                  {/* Overlay Info Card */}
+                  <div className="position-absolute top-0 end-0" style={{ marginTop: '50px', marginLeft: '0.7rem' }}>
+                    <div className="card border-0 shadow" style={{ width: 'max-content' }}>
+                      <div className="card-body p-3">
+                        <div className="d-flex align-items-center mb-2">
+                          <img
+                            src={currentLocation.image}
+                            alt={currentLocation.name}
+                            className="rounded me-2"
+                            style={{ width: '40px', height: '40px', objectFit: 'cover' }}
+                          />
+                          <div>
+                            <h6 className="mb-0 fw-bold text-truncate">{currentLocation.name}</h6>
+                            <div className="d-flex align-items-center">
+                              {renderStars(currentLocation.rating)}
+                              <small className="text-muted ms-1">
+                                {currentLocation.rating} ({currentLocation.reviews})
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+                        <p className="small text-muted mb-0">
+                          <i className="bx bx-map me-1"></i>
+                          {currentLocation.address}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Live Status Badge */}
+                  <div className="position-absolute top-0 end-0 m-3">
+                    <span className="badge bg-success shadow d-flex align-items-center gap-1">
+                      <span className="spinner-grow spinner-grow-sm" role="status" style={{ width: '8px', height: '8px' }}></span>
+                      Buka Sekarang
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Location Details */}
+            <div className="col-lg-6">
+              <div className="ps-lg-4">
+                <div className="d-flex align-items-center mb-3">
+                  <span className="badge bg-primary shadow rounded-pill px-3 py-2 fs-6 me-3">
+                    <i className="bx bx-crown me-1"></i>
+                    {currentLocation.isMain ? 'Cabang Utama' : 'Cabang'}
+                  </span>
+                  <div className="d-flex align-items-center">
+                    {renderStars(currentLocation.rating)}
+                    <span className="ms-2 fw-bold text-warning">{currentLocation.rating}</span>
+                    <small className="text-muted ms-1">({currentLocation.reviews} reviews)</small>
+                  </div>
+                </div>
+
+                <h2 className="display-6 fw-bold mb-3 text-primary">
+                  {currentLocation.name}
+                </h2>
+
+                <div className="row g-3 mb-4">
+                  <div className="col-12">
+                    <div className="d-flex align-items-center text-muted">
+                      <i className="bx bx-map fs-5 me-3 text-primary"></i>
+                      <div>
+                        <strong className="text-dark">Alamat:</strong><br />
+                        {currentLocation.address}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div className="d-flex align-items-center text-muted">
+                      <i className="bx bx-phone fs-5 me-3 text-success"></i>
+                      <div>
+                        <strong className="text-dark">Telepon:</strong><br />
+                        <a href={`tel:${currentLocation.phone}`} className="text-decoration-none">
+                          {currentLocation.phone}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div className="d-flex align-items-center text-muted">
+                      <i className="bx bx-time fs-5 me-3 text-info"></i>
+                      <div>
+                        <strong className="text-dark">Jam Buka:</strong><br />
+                        {currentLocation.hours}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Services Available */}
+                <div className="mb-4">
+                  <h5 className="fw-bold mb-3">
+                    <i className="bx bx-check-shield text-primary me-2"></i>
+                    Layanan Tersedia
+                  </h5>
+                  <div className="d-flex flex-wrap gap-2">
+                    {currentLocation.features.map((feature, index) => (
+                      <span
+                        key={index}
+                        className="badge bg-light text-primary border shadow px-3 py-2"
+                      >
+                        <i className="bx bx-check-circle me-1"></i>
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="d-flex flex-wrap gap-2">
+                  {actionButtons.map((btn, index) => (
+                    <button key={index}
+                    className={`btn ${btn.className} shadow d-flex align-items-center gap-2`}
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title={btn.tooltip}
+                    >
+                      <i className={`bx ${btn.icon}`}></i>
+                      {btn.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
   );
 };
 

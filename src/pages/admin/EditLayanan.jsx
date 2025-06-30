@@ -1,78 +1,57 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../../libs/suppabase';
-import { useNavigate, useLocation, useParams } from 'react-router-dom';
-import { Pencil, Calendar, ArrowLeftCircle, Save } from 'lucide-react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Wrench, Calendar, ArrowLeftCircle, Save } from 'lucide-react';
 
-const EditPesanan = () => {
+const EditLayanan = () => {
   const { id } = useParams();
-  const location = useLocation();
   const navigate = useNavigate();
-
   const [formData, setFormData] = useState({
     nama: '',
-    total_harga: '',
-    status: '',
-    tanggal: ''
+    deskripsi: '',
+    harga: ''
   });
 
   useEffect(() => {
-    if (location.state?.pesananData) {
-      const { pesananData } = location.state;
-      setFormData({
-        nama: pesananData.nama,
-        total_harga: pesananData.total_harga,
-        status: pesananData.status,
-        tanggal: pesananData.tanggal.split('T')[0]
-      });
-    } else {
-      fetchPesanan();
-    }
-  }, [id, location.state]);
+    fetchLayanan();
+  }, [id]);
 
-  const fetchPesanan = async () => {
+  const fetchLayanan = async () => {
     try {
       const { data, error } = await supabase
-        .from('pesanan')
+        .from('layanan')
         .select('*')
         .eq('id', id)
         .single();
-
       if (error) throw error;
-
       setFormData({
         nama: data.nama,
-        total_harga: data.total_harga,
-        status: data.status,
-        tanggal: data.tanggal.split('T')[0]
+        deskripsi: data.deskripsi || '',
+        harga: data.harga || ''
       });
     } catch (err) {
       alert('Gagal mengambil data: ' + err.message);
     }
   };
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const { error } = await supabase
-        .from('pesanan')
+        .from('layanan')
         .update(formData)
         .eq('id', id);
-
       if (error) throw error;
-
-      alert('Pesanan berhasil diperbarui');
-      navigate('/admin/Pesanan');
+      alert('Layanan berhasil diperbarui');
+      navigate('/admin/layanan');
     } catch (err) {
-      alert('Gagal memperbarui pesanan: ' + err.message);
+      alert('Gagal memperbarui layanan: ' + err.message);
     }
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
   };
 
   return (
@@ -87,9 +66,9 @@ const EditPesanan = () => {
       {/* Modern Header */}
       <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/20 p-8 mb-8 z-10 max-w-2xl mx-auto">
         <div className="flex items-center gap-4 mb-2">
-          <Pencil className="w-8 h-8 text-blue-600" />
+          <Wrench className="w-8 h-8 text-blue-600" />
           <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 bg-clip-text text-transparent">
-            Edit Data Pesanan
+            Edit Layanan
           </h1>
         </div>
         <div className="flex items-center text-gray-600 bg-gray-50 rounded-full px-4 py-2 w-fit mb-4">
@@ -99,68 +78,41 @@ const EditPesanan = () => {
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Nama Pelanggan
-            </label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Nama Layanan</label>
             <input
               type="text"
               name="nama"
               value={formData.nama}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
-
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Total Harga
-            </label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Deskripsi</label>
+            <textarea
+              name="deskripsi"
+              value={formData.deskripsi}
+              onChange={handleChange}
+              rows="3"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Harga (Rp)</label>
             <input
               type="number"
-              name="total_harga"
-              value={formData.total_harga}
+              name="harga"
+              value={formData.harga}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Status
-            </label>
-            <select
-              name="status"
-              value={formData.status}
-              onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-            >
-              <option value="Diproses">Diproses</option>
-              <option value="Selesai">Selesai</option>
-              <option value="Dibatalkan">Dibatalkan</option>
-            </select>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Tanggal
-            </label>
-            <input
-              type="date"
-              name="tanggal"
-              value={formData.tanggal}
-              onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-            />
-          </div>
-
           <div className="flex justify-end gap-3 pt-4">
             <button
               type="button"
-              onClick={() => navigate('/admin/Pesanan')}
+              onClick={() => navigate('/admin/layanan')}
               className="flex items-center gap-2 px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-full transition font-semibold"
             >
               <ArrowLeftCircle className="w-5 h-5" />
@@ -180,4 +132,4 @@ const EditPesanan = () => {
   );
 };
 
-export default EditPesanan;
+export default EditLayanan;
