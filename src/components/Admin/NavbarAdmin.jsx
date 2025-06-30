@@ -4,14 +4,14 @@ import { FaUser, FaSignOutAlt } from 'react-icons/fa';
 
 const NavbarAdmin = () => {
   return (
-    <nav className="fixed top-0 left-0 w-full h-16 bg-gradient-to-r from-blue-500 to-blue-700 shadow-lg px-6 py-4 z-50 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 w-full h-16 bg-gradient-to-r from-blue-500 to-blue-700 shadow-lg px-6 py-4 z-50 flex items-center justify-between font-sans">
       {/* Logo - putih dengan efek glow */}
       <div className="text-2xl font-bold text-white tracking-wide drop-shadow-lg">
         LaundryKu
       </div>
 
       {/* Navigation - semua text putih */}
-      <div className="hidden md:flex gap-8 text-sm font-medium">
+      <div className="hidden md:flex gap-8 font-medium">
         {[
           { to: '/admin', label: 'Dashboard' },
           { to: '/admin/pesanan', label: 'Pesanan' },
@@ -23,8 +23,8 @@ const NavbarAdmin = () => {
             key={to}
             to={to}
             className={({ isActive }) =>
-              `text-white hover:text-blue-200 transition ${
-                isActive ? 'font-bold underline underline-offset-4' : ''
+              `flex items-center gap-2 text-sm text-white ${
+                isActive ? 'font-semibold no-underline-offset-4' : ''
               }`
             }
           >

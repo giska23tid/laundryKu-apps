@@ -1,47 +1,45 @@
 import { useState, useEffect } from 'react';
-// import { initTooltip } from '../functions/Tooltip';
 
 const Location = () => {
   const [activeLocation, setActiveLocation] = useState(0);
 
-  // Multiple locations data
   const locations = [
     {
       id: 1,
-      name: "LaundryKu Medan Center",
-      address: "Jl. Sisingamangaraja No. 123, Medan",
-      area: "Medan Center",
-      phone: "(061) 8888-9999",
-      hours: "06:00 - 22:00",
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0288863200934!2d98.6569!3d3.5945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312f8b2c9d1b0b%3A0x6c8e8b5b6b7b8b9b!2sMedan%20Center!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid",
-      features: ["Antar Jemput", "Express 3 Jam", "Cuci Sepatu", "Dry Clean"],
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
-      rating: 4.9,
-      reviews: 234,
-      isMain: true
-    },
-    {
-      id: 2,
-      name: "Laundry Kilat Medan Timur",
-      address: "Jl. Jamin Ginting No. 456, Medan",
-      area: "Medan Timur",
+      name: "LaundryKu Pekanbaru Timur",
+      address: "Jl. Jamin Ginting No. 456, Pekanbaru",
+      area: "Pekanbaru Timur",
       phone: "(061) 7777-8888",
       hours: "07:00 - 21:00",
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0588863200934!2d98.7269!3d3.6145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312f8b2c9d1b0b%3A0x6c8e8b5b6b7b8b9c!2sMedan%20Timur!5e0!3m2!1sen!2sid!4v1700000000001!5m2!1sen!2sid",
-      features: ["Antar Jemput", "Cuci Setrika", "Cuci Sepatu"],
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0588863200934!2d98.7269!3d3.6145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312f8b2c9d1b0b%3A0x6c8e8b5b6b7b8b9c!2sPekanbaru%20Timur!5e0!3m2!1sen!2sid!4v1700000000001!5m2!1sen!2sid",
+      features: ["Cuci Setrika", "Cuci Sepatu"],
       image: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=400&h=300&fit=crop",
       rating: 4.8,
       reviews: 156,
       isMain: false
     },
     {
+      id: 2,
+      name: "LaundryKu Pekanbaru Center",
+      address: "Jl. Sisingamangaraja No. 123, Pekanbaru",
+      area: "Pekanbaru Center",
+      phone: "(061) 8888-9999",
+      hours: "06:00 - 22:00",
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0288863200934!2d98.6569!3d3.5945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312f8b2c9d1b0b%3A0x6c8e8b5b6b7b8b9b!2sPekanbaru%20Center!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid",
+      features: ["Express 3 Jam", "Cuci Sepatu", "Dry Clean"],
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+      rating: 4.9,
+      reviews: 234,
+      isMain: true
+    },
+    {
       id: 3,
-      name: "Laundry Kilat Medan Baru",
-      address: "Jl. Gatot Subroto No. 789, Medan",
-      area: "Medan Baru",
+      name: "LaundryKu Pekanbaru Barat",
+      address: "Jl. Gatot Subroto No. 789, Pekanbaru",
+      area: "Pekanbaru Baru",
       phone: "(061) 6666-7777",
       hours: "08:00 - 20:00",
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0788863200934!2d98.6469!3d3.5745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312f8b2c9d1b0b%3A0x6c8e8b5b6b7b8b9d!2sMedan%20Baru!5e0!3m2!1sen!2sid!4v1700000000002!5m2!1sen!2sid",
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0788863200934!2d98.6469!3d3.5745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312f8b2c9d1b0b%3A0x6c8e8b5b6b7b8b9d!2sPekanbaru%20Baru!5e0!3m2!1sen!2sid!4v1700000000002!5m2!1sen!2sid",
       features: ["Express 3 Jam", "Dry Clean", "Cuci Karpet"],
       image: "https://images.unsplash.com/photo-1567016432779-094069958ea5?w=400&h=300&fit=crop",
       rating: 4.7,
@@ -102,7 +100,7 @@ const Location = () => {
                 Temukan Cabang Laundry Kilat Terdekat
               </h2>
               <p className="lead text-muted mb-4 col-lg-8 mx-auto">
-                Tersebar di berbagai lokasi strategis di Medan, Laundry Kilat hadir
+                Tersebar di berbagai lokasi strategis di Pekanbaru, Laundry Kilat hadir
                 untuk memberikan layanan terbaik dengan jangkauan yang luas dan mudah dijangkau.
               </p>
             </div>

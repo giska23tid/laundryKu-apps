@@ -20,21 +20,18 @@ const Footer = () => {
   const quickLinks = [
     { icon: "home-alt", text: "Beranda", href: "#" },
     { icon: "briefcase-alt-2", text: "Layanan", href: "#" },
-    { icon: "money", text: "Harga", href: "#" },
     { icon: "chat", text: "Kontak", href: "#" },
   ];
 
   const features = [
     { icon: "home-alt", text: "Beranda", href: "#" },
     { icon: "archive", text: "Layanan", href: "#" },
-    { icon: "wallet", text: "Paket Harga", href: "#" },
     { icon: "support", text: "Bantuan", href: "#" },
   ];
 
   const supportLinks = [
     { icon: "help-circle", text: "Help Center" },
     { icon: "envelope", text: "Contact Us" },
-    { icon: "file", text: "Privacy Policy" },
     { icon: "check-shield", text: "Terms of Service" },
   ];
 

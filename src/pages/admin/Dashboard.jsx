@@ -99,7 +99,7 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="flex-1 p-6 min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100">
+    <div className="flex-1 p-6 min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 font-sans">
       {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
@@ -117,17 +117,6 @@ const Dashboard = () => {
             <div className="flex items-center text-gray-600 bg-gray-50 rounded-full px-4 py-2 w-fit">
               <Calendar className="w-5 h-5 mr-2" />
               <span className="font-medium">{new Date().toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}</span>
-            </div>
-          </div>
-          <div className="flex items-center space-x-4">
-            <div className="relative">
-              <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-3 rounded-full shadow-lg">
-                <Bell className="w-6 h-6 text-white" />
-              </div>
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold animate-pulse">3</span>
-            </div>
-            <div className="bg-gradient-to-r from-blue-400 to-blue-600 p-3 rounded-full shadow-lg">
-              <Award className="w-6 h-6 text-white" />
             </div>
           </div>
         </div>
@@ -156,13 +145,6 @@ const Dashboard = () => {
             gradient: "from-indigo-500 to-indigo-600",
             icon: <Clock className="w-8 h-8" />,
             bgPattern: "bg-indigo-50"
-          },
-          {
-            label: "Pelanggan Aktif",
-            value: "47",
-            gradient: "from-blue-400 to-indigo-500",
-            icon: <Users className="w-8 h-8" />,
-            bgPattern: "bg-blue-50"
           }
         ].map((item, idx) => (
           <div

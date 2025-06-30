@@ -173,11 +173,17 @@ const Service = () => {
           {/* Order Form Modal */}
           {showOrderForm && selectedService && (
             <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 px-10">
-              <div className="bg-white rounded-lg w-full max-w-md max-h-[90vh] overflow-y-auto p-6 scrollbar-thin">
+              {/* Animated Blobs */}
+              <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
+              <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+              <div className="absolute top-40 left-40 w-80 h-80 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-25 animate-blob animation-delay-4000"></div>
+              <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-blue-500 p-8 w-full max-w-lg z-10">
                 <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-xl font-semibold">Pesan Layanan</h3>
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 bg-clip-text text-transparent">
+                    Pesan Layanan
+                  </h3>
                   <button onClick={() => setShowOrderForm(false)} className="text-gray-500 hover:text-gray-700">
-                    <X size={24} />
+                    <X size={28} />
                   </button>
                 </div>
 
@@ -194,99 +200,66 @@ const Service = () => {
                     <p className="text-gray-600">Terima kasih telah memesan layanan kami.</p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit}>
-                    <div className="mb-4">
-                      <label className="block text-gray-700 mb-2">Layanan</label>
-                      <div className="p-3 bg-gray-100 rounded">
-                        <p className="font-medium">{selectedService.nama}</p>
-                        <p className="text-sm text-gray-600">
-                          Rp {selectedService.harga?.toLocaleString('id-ID')} / {selectedService.satuan}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="mb-4">
-                      <label className="block text-gray-700 mb-2">Nama Lengkap*</label>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Nama</label>
                       <input
                         type="text"
                         name="nama"
                         value={formData.nama}
                         onChange={handleInputChange}
-                        className="w-full p-2 border rounded"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         required
                       />
                     </div>
-
-                    <div className="mb-4">
-                      <label className="block text-gray-700 mb-2">Email*</label>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">No. HP</label>
                       <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="w-full p-2 border rounded"
-                        required
-                      />
-                    </div>
-
-                    <div className="mb-4">
-                      <label className="block text-gray-700 mb-2">No. HP*</label>
-                      <input
-                        type="tel"
+                        type="text"
                         name="no_hp"
                         value={formData.no_hp}
                         onChange={handleInputChange}
-                        className="w-full p-2 border rounded"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         required
                       />
                     </div>
-
-                    <div className="mb-4">
-                      <label className="block text-gray-700 mb-2">Alamat*</label>
-                      <textarea
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Alamat</label>
+                      <input
+                        type="text"
                         name="alamat"
                         value={formData.alamat}
                         onChange={handleInputChange}
-                        className="w-full p-2 border rounded"
-                        rows="2"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         required
                       />
                     </div>
-
-                    <div className="mb-4">
-                      <label className="block text-gray-700 mb-2">
-                        {selectedService.satuan === 'kg' ? 'Berat (kg)*' : 'Jumlah (kg)*'}
-                      </label>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Jumlah / Berat ({selectedService.satuan})</label>
                       <input
                         type="number"
                         name="quantity"
                         value={formData.quantity}
                         onChange={handleInputChange}
-                        min="1"
-                        step={selectedService.satuan === 'kg' ? "0.1" : "1"}
-                        className="w-full p-2 border rounded"
+                        min={1}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         required
                       />
                     </div>
-
-                    <div className="mb-4 p-3 bg-gray-100 rounded">
-                      <div className="flex justify-between font-semibold">
-                        <span>Total Harga:</span>
-                        <span>Rp {calculateTotal().toLocaleString('id-ID')}</span>
-                      </div>
+                    <div className="flex justify-between items-center mt-2">
+                      <span className="text-gray-700 font-medium">Total: <span className="text-blue-700 font-bold">Rp {calculateTotal().toLocaleString('id-ID')}</span></span>
                     </div>
-
-                    <div className="flex gap-2">
+                    <div className="flex justify-end gap-3 pt-4">
                       <button
                         type="button"
                         onClick={() => setShowOrderForm(false)}
-                        className="flex-1 bg-gray-200 text-gray-800 py-2 rounded hover:bg-gray-300"
+                        className="flex items-center gap-2 px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-full transition font-semibold"
                       >
                         Batal
                       </button>
                       <button
                         type="submit"
-                        className="flex-1 bg-blue-600 text-white py-2 rounded hover:bg-blue-700 disabled:bg-blue-300"
+                        className="flex items-center gap-2 px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow transition font-semibold"
                         disabled={loading}
                       >
                         {loading ? 'Memproses...' : 'Pesan Sekarang'}

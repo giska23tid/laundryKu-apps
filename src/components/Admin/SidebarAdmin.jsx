@@ -12,7 +12,7 @@ import {
 
 const SidebarAdmin = () => {
   return (
-    <aside className="fixed top-16 left-0 w-64 h-[calc(100vh-4rem)] overflow-y-auto bg-white border-r border-gray-200 shadow-sm p-6 hidden md:block z-40">
+    <aside className="fixed top-16 left-0 w-64 h-[calc(100vh-4rem)] overflow-y-auto bg-white border-r border-gray-200 shadow-sm p-6 hidden md:block z-40 font-sans">
 
       <nav className="space-y-1 text-sm font-medium">
         <NavLink
@@ -33,7 +33,7 @@ const SidebarAdmin = () => {
           { to: "/admin/pesanan", icon: FaClipboardList, label: "Pesanan" },
           { to: "/admin/ulasan", icon: FaUsers, label: "Ulasan" },
           { to: "/admin/layanan", icon: FaConciergeBell, label: "Layanan" },
-          { to: "/admin/riwayat-transaksi", icon: FaUserCog, label: "RiwayatTransaksi" },
+          { to: "/admin/riwayat-transaksi", icon: FaUserCog, label: "Riwayat Transaksi" },
         ].map(({ to, icon: Icon, label }) => (
           <NavLink
             key={to}
